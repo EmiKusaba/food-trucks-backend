@@ -56,11 +56,12 @@ CREATE TABLE IF NOT EXISTS drinks (
        FOREIGN KEY  (truck_id) REFERENCES trucks (id)
 );
 
-CREATE TABLE IF NOT EXISTS comments (
+CREATE TABLE IF NOT EXISTS reviews (
        id           serial,
        truck_id     integer,
        user_id      integer,
        ts           timestamp NOT NULL,
+       rating	    integer NOT NULL,
        comment      varchar(2048) NOT NULL,
        PRIMARY KEY  (id),
        FOREIGN KEY  (truck_id) REFERENCES trucks (id),
