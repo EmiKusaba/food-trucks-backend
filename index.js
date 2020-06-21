@@ -1,6 +1,10 @@
 const express = require("express");
 const app = express();
 
+const bodyParser = require('body-parser');
+app.use(bodyParser.json()); // support json encoded bodies
+app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
+
 const trucksRouter = require("./routes/trucks");
 const usersRouter = require("./routes/users");
 
