@@ -4,6 +4,10 @@ const app = express();
 const bodyParser = require('body-parser');
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  next();
+})
 
 const trucksRouter = require("./routes/trucks");
 const usersRouter = require("./routes/users");

@@ -1,5 +1,7 @@
 const pg = require("pg");
 
+// heroku pg:psql -a foodtruckstracker-backend
+
 class Connection {
   constructor() {
     if(!this.pool) {
