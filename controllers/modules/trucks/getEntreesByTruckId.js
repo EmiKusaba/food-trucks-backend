@@ -8,7 +8,7 @@ const getEntreesByTruckId = (req, res) => {
       return res.status(500).send(`Error: ${err}`);
     }
     return res.json(result.rows);
-  })
+  });
 };
 
 module.exports = getEntreesByTruckId;

@@ -7,6 +7,7 @@ const getTruckById = (req, res) => {
     if(err) {
       return res.status(500).send(`Error: ${err}`);
     }
+    
     return res.json(result.rows);
   })
 };
