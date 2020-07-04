@@ -7,6 +7,6 @@ router.get("/:id", controller.getTruckById);
 router.get("/:id/entrees", controller.getEntreesByTruckId);
 router.get("/:id/drinks", controller.getDrinksByTruckId);
 router.get("/:id/reviews", controller.getReviewsByTruckId);
-router.post("/:id/reviews/add", controller.addReviewByTruckId);
+router.put("/:id/reviews", controller.addReviewByTruckId);
 
 module.exports = router;

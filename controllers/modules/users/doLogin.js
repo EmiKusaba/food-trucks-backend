@@ -24,7 +24,9 @@ const doLogin = (req, res) => {
       });
     }
 
-    const matched = password === rows[0].password;
+    const row = rows[0];
+
+    const matched = password === row.password;
     if(!matched) {
       return res.json({
         "success": false,
@@ -35,7 +37,8 @@ const doLogin = (req, res) => {
     return res.json({
       "success": true,
       "message": `User '${username}' logged in successfully.`,
-    })
+      "user": {id: row.id, name: row.name},
+    });
   });
 };
 

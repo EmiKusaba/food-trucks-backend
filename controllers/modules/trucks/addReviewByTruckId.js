@@ -2,7 +2,6 @@ const connection = require("../../../postgres/connection");
 
 const addReviewByTruckId = (req, res) => {
   const truckId = parseInt(req.params.id);
-  console.log(req.body);
   let {userId, rating, comment} = req.body;
 
   if(!userId || !rating || !comment) {
